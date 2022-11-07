@@ -11,7 +11,7 @@ public class CameraMotor : MonoBehaviour
 
     private float transition = 0.0f;
     private float animationDuration = 2.0f;
-    private Vector3 animationOffset = new Vector3(0, 5, 5);
+    private Vector3 animationOffset = new Vector3(0, 3, 5);
 
 
 
@@ -35,7 +35,7 @@ public class CameraMotor : MonoBehaviour
 
 
         // Y
-        moveVector.y = Mathf.Clamp(moveVector.y,3,5);
+        moveVector.y = Mathf.Clamp(moveVector.y,5,5);
 
         if (transition > 1.0f)
         {

@@ -1,0 +1,20 @@
+{
+"instructions_readme": "1) Open Chrome, 2) go to chrome://tracing, 3) click Load, 4) navigate to this file.",
+
+"traceEvents":[
+{ "pid": "Unity", "ph":"M", "name": "process_name", "args": {"name": "Unity"} },
+{ "pid": "Unity", "ph":"M", "name": "process_sort_index", "args": {"sort_index": -100} },
+{ "pid": "Unity", "tid": 1, "ph":"M", "name": "thread_name", "args": {"name": ""} },
+{ "pid": "Unity", "tid": 1,"ts": 1.66780763541709E+15,"dur": 10818879, "ph":"X", "name": "Build player"},
+{ "pid": "Unity", "tid": 1,"ts": 1.66780763543708E+15,"dur": 225276, "ph":"X", "name": "Preprocess Player"},
+{ "pid": "Unity", "tid": 1,"ts": 1.66780763570028E+15,"dur": 10459076, "ph":"X", "name": "Prepare For Build"},
+{}
+
+],
+"meta_datetime": "11/07/2022 08:54:06",
+"meta_command_line": "\"C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.12f1\\Editor\\Unity.exe\" -projectpath C:\\Users\\GAME2\\Documents\\GitHub\\CrossJam\\Crossjam -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-bbvgSLlkaY58UOfCapTtU -hubSessionId b6c0daf0-5e6a-11ed-9c89-abe4c141fc3d -accessToken _kwweoB8rovPUBqKGtX356FSbSRaSpDf89LJGJC3bCE008f",
+"meta_command_line_args": "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.12f1\\Editor\\Unity.exe -projectpath C:\\Users\\GAME2\\Documents\\GitHub\\CrossJam\\Crossjam -useHub -hubIPC -cloudEnvironment production -licensingIpc LicenseClient-bbvgSLlkaY58UOfCapTtU -hubSessionId b6c0daf0-5e6a-11ed-9c89-abe4c141fc3d -accessToken _kwweoB8rovPUBqKGtX356FSbSRaSpDf89LJGJC3bCE008f",
+"meta_user_name": "GAME2",
+"meta_os_version": "Microsoft Windows NT 10.0.19043.0",
+"meta_cpu_count": "24"
+}

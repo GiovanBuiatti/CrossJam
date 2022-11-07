@@ -9,6 +9,7 @@ public class PlayerMotor : MonoBehaviour
 
 
     private float speed = 5.0f;
+    
 
     private float animationDuration = 2.0f;
     private float startTime;
@@ -42,6 +43,21 @@ public class PlayerMotor : MonoBehaviour
 
         // X - Gauche et Droite
         moveVector.x = Input.GetAxisRaw("Horizontal")* speed;
+
+        // CONTROL MOBILE
+        if (Input.GetMouseButton(0))
+        {
+            if(Input.mousePosition.x > Screen.width / 2)
+            {
+                
+                moveVector.x = 1;
+            }
+            else
+            {
+                
+                moveVector.x = -1;
+            }
+        }
 
         
         // Z - Avant et Arrière

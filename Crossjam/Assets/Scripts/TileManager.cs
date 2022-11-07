@@ -8,9 +8,9 @@ public class TileManager : MonoBehaviour
     public GameObject[] tilePrefabs;
 
     private Transform playerTransform;
-    //Cette variable sert à faire spawn le sol derriere le joueur au moment du spawn pour que il n'y ait pas du vide
+    
     private float spawnZ = -6.0f;
-    //Cette variable sert a faire spawn en avance du sol 
+    //Cette variable sert a faire spawn en avance des prefabs
     private float tileLength = 12.0f;
     //Cette variable est le nombre de tile en jeu 
     private int amnTilesOnScreen = 7;
