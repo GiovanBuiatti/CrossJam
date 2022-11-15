@@ -8,7 +8,7 @@ public class PlayerMotor : MonoBehaviour
     private Vector3 moveVector;
 
 
-    private float speed = 5.0f;
+    private float speed = 20.0f;
     
 
     private float animationDuration = 2.0f;
@@ -50,12 +50,12 @@ public class PlayerMotor : MonoBehaviour
             if(Input.mousePosition.x > Screen.width / 2)
             {
                 
-                moveVector.x = 1;
+                moveVector.x = 3;
             }
             else
             {
                 
-                moveVector.x = -1;
+                moveVector.x = -3;
             }
         }
 
@@ -68,7 +68,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void SetSpeed(float modifier)
     {
-        speed = 5.0f + modifier;
+        speed = 20.0f + modifier;
     }
 
     //Called everytime our capsule hits something

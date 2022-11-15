@@ -9,11 +9,11 @@ public class TileManager : MonoBehaviour
 
     private Transform playerTransform;
     
-    private float spawnZ = -6.0f;
+    private float spawnZ = 50.0f;
     //Cette variable sert a faire spawn en avance des prefabs
     private float tileLength = 12.0f;
     //Cette variable est le nombre de tile en jeu 
-    private int amnTilesOnScreen = 7;
+    private int amnTilesOnScreen = 5;
     //Cette variable sert a ce que les tiles ne se suppriment pas trop tot
     private float safeZone = 15.0f;
 
