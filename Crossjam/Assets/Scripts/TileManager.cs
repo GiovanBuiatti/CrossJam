@@ -6,6 +6,7 @@ public class TileManager : MonoBehaviour
 {
 
     public GameObject[] tilePrefabs;
+    
 
     private Transform playerTransform;
     
@@ -61,7 +62,7 @@ public class TileManager : MonoBehaviour
         GameObject go;
         if(prefabIndex == -1)
         {
-            go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
+            go = Instantiate(tilePrefabs[RandomPrefabIndex()], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z),Quaternion.identity) as GameObject;
         }
         else
         {

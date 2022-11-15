@@ -55,6 +55,7 @@ public class PlayerMotor : MonoBehaviour
             else
             {
                 
+
                 moveVector.x = -3;
             }
         }
