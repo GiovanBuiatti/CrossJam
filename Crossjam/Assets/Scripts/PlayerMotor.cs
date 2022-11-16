@@ -15,6 +15,7 @@ public class PlayerMotor : MonoBehaviour
     private float startTime;
 
     private bool isDead = false;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -42,21 +43,28 @@ public class PlayerMotor : MonoBehaviour
         moveVector = Vector3.zero;
 
         // X - Gauche et Droite
-        moveVector.x = Input.GetAxisRaw("Horizontal")* speed;
+        moveVector.x =  Input.GetAxisRaw("Horizontal")* speed;
 
+        
         // CONTROL MOBILE
         if (Input.GetMouseButton(0))
         {
             if(Input.mousePosition.x > Screen.width / 2)
             {
+                if(transform.position.x < 5)
+                {
+                    moveVector.x = 10;
+                }
                 
-                moveVector.x = 3;
             }
             else
             {
-                
+                if (transform.position.x>-5)
+                {
+                    moveVector.x = -10;
+                }
 
-                moveVector.x = -3;
+                
             }
         }
 
@@ -75,8 +83,16 @@ public class PlayerMotor : MonoBehaviour
     //Called everytime our capsule hits something
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.point.z > transform.position.z + controller.radius)
-            Death();
+        if (hit.gameObject.tag == "Rock")
+        {
+            if (hit.point.z > transform.position.z + controller.radius)
+            {
+                Death();
+            }
+                
+        }
+
+        
     }
     private void Death()
     {

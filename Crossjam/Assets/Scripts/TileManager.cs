@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
+    [SerializeField] Transform[] SpawnContainer;
 
     public GameObject[] tilePrefabs;
     
@@ -22,9 +23,13 @@ public class TileManager : MonoBehaviour
     
     private List<GameObject> activeTiles;
 
+    
+
     // Start is called before the first frame update
     private void Start()
     {
+
+        
 
         activeTiles = new List<GameObject>();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -59,19 +64,44 @@ public class TileManager : MonoBehaviour
     //Ici on a la fonction qui fait spawn des PREFABS ALEATOIREMENT
     private void SpawnTile(int prefabIndex = -1)
     {
-        GameObject go;
+        GameObject go = null;
+
+
+        
         if(prefabIndex == -1)
         {
-            go = Instantiate(tilePrefabs[RandomPrefabIndex()], new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z),Quaternion.identity) as GameObject;
+            go = Instantiate(tilePrefabs[RandomPrefabIndex()]) as GameObject;
+
         }
+        
         else
         {
             go = Instantiate(tilePrefabs[prefabIndex]) as GameObject;
         }
-            go.transform.SetParent(transform);
-        go.transform.position = Vector3.forward * spawnZ;
+        
+        
+        int randIndex = Random.Range(0, 3);
+        Debug.Log("index :" + randIndex);
+
+
+
+        go.transform.SetParent(transform);
+
+
+        //go.transform.position = Vector3.forward * spawnZ;
+        go.transform.position = new Vector3(
+            this.transform.position.x + SpawnContainer[randIndex].transform.position.x,
+            this.transform.position.y,
+            (Vector3.forward * spawnZ).magnitude) ;
+
+        
+
+        //go.transform.position = new Vector3(SpawnContainer[randIndex].transform.position.x, SpawnContainer[randIndex].transform.position.y, this.transform.position.z);
+
         spawnZ += tileLength;
+
         activeTiles.Add(go);
+
     }
 
     //Ici on supprime les prefabs qui sont derriere le joueur 
